@@ -1,0 +1,51 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% load tagz %}
+
+
+{% block content %}
+  <div class="details">
+{#    <div class="links clearfix">#}
+{#      {% include 'mainapp/includes/inc_countries_menu.html' %}#}
+{#    </div>#}
+
+    <div class="products_list">
+      <div class="title clearfix">
+        <h2>
+          Категория: "{{ country.name|title }}"
+        </h2>
+          <div class="paginator">
+              {% if accommodations.has_previous %}
+                  <a href="{% url 'acc:page' country.pk accommodations.previous_page_number %}"></a>
+              {% endif %}
+          <span class="current">
+              страница {{ accommodations.number }}
+              {{ accommodations.paginator.num_pages }}
+          </span>
+          {% if accommodations.has_next %}
+              <a href="{% url 'acc:page' country.pk accommodations.next_page_number %}"></a>
+          {% endif %}
+          </div>
+      </div>
+      <div class="category-products clearfix">
+
+        {% for acc in list_of_accommodations %}
+          <div class="block">
+            <a href="{% url 'acc:accommodation' acc.pk %}">
+              <img src="/media/{{ acc.image }}" alt="product">
+              <div class="text">
+                <img src="{% static 'img/icon-hover.png' %}" alt="hover">
+                  <h4>{{ acc.name }}</h4>
+                  <p>{{ acc.description }}</p>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+  <div class="clr"></div>
+
+{% endblock %}
