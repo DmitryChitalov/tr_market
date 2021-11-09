@@ -2,7 +2,6 @@ alabaster==0.7.12
 allauth-django==0.42.6
 asgiref==3.4.1
 astroid==2.3.2
-autopep8==1.5.7
 Babel==2.6.0
 backcall==0.1.0
 bandit==1.6.0
