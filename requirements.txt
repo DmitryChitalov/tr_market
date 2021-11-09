@@ -1,7 +1,6 @@
 alabaster==0.7.12
 asgiref==3.4.1
 astroid==2.3.2
-autopep8==1.5.7
 Babel==2.6.0
 backcall==0.1.0
 bandit==1.6.0
@@ -68,7 +67,6 @@ prompt-toolkit==2.0.9
 psutil==5.5.1
 psycopg2==2.9.1
 psycopg2-binary==2.8.2
-pycodestyle==2.7.0
 pycparser==2.20
 pycryptodome==3.8.2
 pycryptodomex==3.8.2
